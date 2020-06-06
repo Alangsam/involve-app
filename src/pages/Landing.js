@@ -5,7 +5,7 @@ export default function Landing() {
         <div className="background-image">
             <div className="container">
                 <div className="row all-v">
-                    <div className="col-5 mt-6 ">
+                    <div className="col-lg-5 mt-6 ">
                         <div
                             className="d-flex align-items-start flex-column"
                             style={{ height: "95vh" }}
@@ -25,10 +25,12 @@ export default function Landing() {
                                     blah blah blah
                                 </p>
                             </div>
-                            <div className="my-auto">
+                            <div className="mb-auto ">
                                 <button className="btn btn-primary">
-                                    Create an account, or enter your info
-                                    manually when you find the right cause
+                                    <h1>
+                                        Create an account, or enter your info
+                                        manually when you find the right cause
+                                    </h1>
                                 </button>
                             </div>
                             <div className="mb-7 mt-9 text-white">
@@ -40,7 +42,7 @@ export default function Landing() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-6 mt-6 offset-1">
+                    <div className="col-lg-6 mt-6 offset-lg-1">
                         <div>
                             <div className="card ">
                                 <h2 className="text-center">Involve</h2>
