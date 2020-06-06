@@ -1,5 +1,14 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
 
 export default function App() {
-  return <div>hello world</div>;
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route />
+      </Switch>
+    </Router>
+  );
 }
