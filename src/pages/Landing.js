@@ -5,7 +5,7 @@ export default function Landing() {
         <div className="background-image">
             <div className="container">
                 <div className="row all-v">
-                    <div className="col-lg-5 mt-6 ">
+                    <div className="col-lg-4 mt-6 ">
                         <div
                             className="d-flex align-items-start flex-column"
                             style={{ height: "95vh" }}
@@ -25,12 +25,12 @@ export default function Landing() {
                                     blah blah blah
                                 </p>
                             </div>
-                            <div className="mb-auto ">
+                            <div className="mb-auto  my-5">
                                 <button className="btn btn-primary">
-                                    <h1>
+                                    <h2>
                                         Create an account, or enter your info
                                         manually when you find the right cause
-                                    </h1>
+                                    </h2>
                                 </button>
                             </div>
                             <div className="mb-7 mt-9 text-white">
@@ -42,7 +42,7 @@ export default function Landing() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6 mt-6 offset-lg-1">
+                    <div className="col-lg-7 mt-6 offset-lg-1">
                         <div>
                             <div className="card ">
                                 <h2 className="text-center">Involve</h2>
@@ -60,6 +60,9 @@ export default function Landing() {
                                     blah blah blah blah blah blah blah blah blah
                                     blah blah blah blah blah
                                 </p>
+                                <button className="btn btn-primary">
+                                    <h3>view more</h3>
+                                </button>
                             </div>
                             <div className="card my-6">
                                 <h2 className="text-center">Involve</h2>
@@ -77,6 +80,9 @@ export default function Landing() {
                                     blah blah blah blah blah blah blah blah blah
                                     blah blah blah blah blah
                                 </p>
+                                <button className="btn btn-primary">
+                                    <h3>view more</h3>
+                                </button>
                             </div>
                             <div className="card my-6">
                                 <h2 className="text-center">Involve</h2>
@@ -94,6 +100,9 @@ export default function Landing() {
                                     blah blah blah blah blah blah blah blah blah
                                     blah blah blah blah blah
                                 </p>
+                                <button className="btn btn-primary">
+                                    <h3>view more</h3>
+                                </button>
                             </div>
                             <div className="card my-6">
                                 <h2 className="text-center">Involve</h2>
@@ -111,6 +120,9 @@ export default function Landing() {
                                     blah blah blah blah blah blah blah blah blah
                                     blah blah blah blah blah
                                 </p>
+                                <button className="btn btn-primary">
+                                    <h3>view more</h3>
+                                </button>
                             </div>
                         </div>
                     </div>
