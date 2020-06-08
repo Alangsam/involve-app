@@ -1,4 +1,6 @@
 import React from "react";
+import CaseOverview from "../components/CaseOverview";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
     return (
@@ -7,10 +9,10 @@ export default function Landing() {
                 <div className="row all-v">
                     <div className="col-lg-4 mt-6 ">
                         <div
-                            className="d-flex align-items-start flex-column"
+                            className="d-flex align-items-start flex-column  sticky-top"
                             style={{ height: "95vh" }}
                         >
-                            <div className="card mb-auto">
+                            <div className="card mb-8 bg-transparent border-none">
                                 <h2 className="text-center">Involve</h2>
                                 <p>
                                     blah blah blah blah blah blah blah blah blah
@@ -20,20 +22,19 @@ export default function Landing() {
                                     blah blah blah blah blah blah blah blah blah
                                     blah blah blah blah blah blah blah blah blah
                                     blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah
+                                    blah blah blah blah blah blah blah
                                 </p>
                             </div>
-                            <div className="mb-auto  my-5">
-                                <button className="btn btn-primary">
+                            <div className="mb-auto  ">
+                                <Link to="/login" className="btn btn-primary">
                                     <h2>
-                                        Create an account, or enter your info
-                                        manually when you find the right cause
+                                        Sign in, Create an account, or enter
+                                        your info manually when you find the
+                                        right cause
                                     </h2>
-                                </button>
+                                </Link>
                             </div>
-                            <div className="mb-7 mt-9 text-white">
+                            <div className="position-fixedmt-auto text-white">
                                 <h1>IN ° VOLVE</h1>
                                 <h3>
                                     cause (a person or group) to experience or
@@ -44,86 +45,44 @@ export default function Landing() {
                     </div>
                     <div className="col-lg-7 mt-6 offset-lg-1">
                         <div>
-                            <div className="card ">
-                                <h2 className="text-center">Involve</h2>
-                                <p>
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah
-                                </p>
-                                <button className="btn btn-primary">
-                                    <h3>view more</h3>
-                                </button>
-                            </div>
-                            <div className="card my-6">
-                                <h2 className="text-center">Involve</h2>
-                                <p>
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah
-                                </p>
-                                <button className="btn btn-primary">
-                                    <h3>view more</h3>
-                                </button>
-                            </div>
-                            <div className="card my-6">
-                                <h2 className="text-center">Involve</h2>
-                                <p>
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah
-                                </p>
-                                <button className="btn btn-primary">
-                                    <h3>view more</h3>
-                                </button>
-                            </div>
-                            <div className="card my-6">
-                                <h2 className="text-center">Involve</h2>
-                                <p>
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah blah blah blah blah
-                                    blah blah blah blah blah
-                                </p>
-                                <button className="btn btn-primary">
-                                    <h3>view more</h3>
-                                </button>
-                            </div>
+                            <CaseOverview
+                                id="hello"
+                                name="Joseph Abbitt"
+                                url="https://www.innocenceproject.org/wp-content/uploads/2016/02/8f038d8e-e7ae-4ea0-bc1c-c5632286e9d6.jpeg"
+                            />
+                            <CaseOverview
+                                name="Christopher Abernathy"
+                                url="https://www.innocenceproject.org/wp-content/uploads/2016/02/925b00c6-b04b-44b9-938b-a3fa387373c0.jpeg"
+                            />
+                            <CaseOverview
+                                name="Clemente Aguirre-Jarquin"
+                                url="https://www.innocenceproject.org/wp-content/uploads/2018/11/IMG_0389-768x527.jpg"
+                            />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
+                            <CaseOverview />
                         </div>
                     </div>
                 </div>
