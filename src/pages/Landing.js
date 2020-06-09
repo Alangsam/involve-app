@@ -89,7 +89,8 @@ export default class Landing extends React.Component {
                                         }}
                                     >
                                         <h2 id="sign-in-or-create-button-text">
-                                            Sign in, Create an account
+                                            Admins, sign in Here, or Create an
+                                            account
                                         </h2>
                                     </button>
                                     <div className="card">

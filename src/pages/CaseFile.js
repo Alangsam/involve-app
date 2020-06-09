@@ -8,7 +8,7 @@ export default function CaseFile() {
                 <div className="row">
                     <div className="col-12 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-light">
                         <div className="">
-                            <Link to="/all-cases" className="btn text-light">
+                            <Link to="/" className="btn text-light">
                                 Back
                             </Link>
                             <Link to="/" className="btn text-light float-right">
