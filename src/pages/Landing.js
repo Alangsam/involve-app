@@ -17,13 +17,6 @@ export default class Landing extends React.Component {
     }
 
     changeDisplayButton = (e) => {
-        const styleDisplayButton = document.getElementById(
-            "sign-in-or-create-button"
-        );
-        const styleDisplayLoginCard = document.getElementById("sign-in-card");
-        const styleDisplayCreateCard = document.getElementById(
-            "create-account-card"
-        );
         if (
             e.target.id === "sign-in-or-create-button" ||
             e.target.id === "sign-in-or-create-button-text"
@@ -51,7 +44,7 @@ export default class Landing extends React.Component {
     };
 
     render() {
-        const props = this.props;
+        //const props = this.props;
         return (
             <div className="background-image">
                 <div className="container">

@@ -19,7 +19,7 @@ export default function App() {
                 />
                 <Route exact path="/case-name" component={CaseFile} />
                 <Route exact path="/case-name-edit" component={CaseFileEdit} />
-                <Route exact path="wysiwyg" component={Wysiwyg} />
+                <Route exact path="/wysiwyg" component={Wysiwyg} />
             </Switch>
         </Router>
     );
