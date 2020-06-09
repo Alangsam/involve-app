@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 //import FastAverageColor from "fast-average-color";
 
 export default function CaseOverview(props) {
@@ -39,9 +40,9 @@ export default function CaseOverview(props) {
             <h6 className="text-white">
                 posted by Blah B. Blah on jan/1/20 at 11:11pm
             </h6>
-            <button className="btn btn-primary">
-                <h3>view more</h3>
-            </button>
+            <Link to="/case-name-edit" className="btn btn-primary">
+                <h3>Edit</h3>
+            </Link>
         </div>
     );
 }

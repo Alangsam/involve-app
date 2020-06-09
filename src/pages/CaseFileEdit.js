@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function CaseFile() {
+export default function CaseFileEdit() {
     return (
         <div className="background-image">
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-light">
                         <div className="">
-                            <Link to="/all-cases" className="btn text-light">
+                            <Link
+                                to="/all-cases-admin"
+                                className="btn text-light"
+                            >
                                 Back
                             </Link>
                             <Link to="/" className="btn text-light float-right">
