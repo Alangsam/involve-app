@@ -8,21 +8,22 @@ export default class Wysiwyg extends React.Component {
             IsItItalic: "false",
             WhatsInTheBox: "",
             whatsHighlighted: "",
+            whatsBeingEmbeded: "",
         };
     }
 
     makeItBold() {
         document.execCommand("bold", false);
-        // seperate into objects
-        // add a span to every section whos key value implies it should be bold
     }
     makeItItalic() {
         document.execCommand("italic", false);
     }
 
     makeItALink() {
-        let whatTheyWant = "www.google.com";
-        document.execCommand("createLink", false, whatTheyWant);
+        let whatTheyWant = document.getElementById(
+            "what-the-user-wants-to-embed"
+        ).value;
+        document.execCommand("createLink", true, this.state.whatsBeingEmbeded);
     }
     getWhatsHighlighted() {
         let text = "";
@@ -46,7 +47,14 @@ export default class Wysiwyg extends React.Component {
         return text;
     }
 
-    updateWhatsInTheBox() {}
+    blurBackground() {
+        document.getElementById("the-wysiwyg-itself").classList.add("blur");
+        document.getElementById("pop-up-url-input").style.display = "block";
+    }
+    unBlurBackground() {
+        document.getElementById("the-wysiwyg-itself").classList.remove("blur");
+        document.getElementById("pop-up-url-input").style.display = "none";
+    }
 
     render() {
         return (
@@ -54,42 +62,52 @@ export default class Wysiwyg extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-8 offset-2">
-                            <div className="card">
-                                <div className="btn-group">
-                                    <button
-                                        className="btn btn-outline-dark"
-                                        onClick={() => {
-                                            this.makeItBold();
-                                        }}
-                                    >
-                                        Bold
-                                    </button>
-                                    <button
-                                        className="btn btn-outline-dark"
-                                        onClick={() => {
-                                            this.makeItItalic();
-                                        }}
-                                    >
-                                        Italics
-                                    </button>
-                                    <button
-                                        className="btn btn-outline-dark"
-                                        onClick={() => {
-                                            this.makeItALink();
-                                        }}
-                                    >
-                                        Embed Link
-                                    </button>
-                                </div>
-                                <div>
-                                    <div
-                                        onKeyUp={() => {}}
-                                        id="wysiwyg-text-area"
-                                        className="w-100"
-                                        contentEditable="true"
-                                        suppressContentEditableWarning={true}
-                                        onClick={() => {}}
-                                    ></div>
+                            <div>
+                                <iframe src="/"></iframe>
+                                <div className="card" id="the-wysiwyg-itself">
+                                    <div className="btn-group">
+                                        <button
+                                            className="btn btn-outline-dark"
+                                            onClick={() => {
+                                                this.makeItBold();
+                                            }}
+                                        >
+                                            Bold
+                                        </button>
+                                        <button
+                                            className="btn btn-outline-dark"
+                                            onClick={() => {
+                                                this.makeItItalic();
+                                            }}
+                                        >
+                                            Italics
+                                        </button>
+                                        <button
+                                            className="btn btn-outline-dark"
+                                            onClick={() => {
+                                                this.blurBackground();
+                                                document
+                                                    .getElementById(
+                                                        "what-the-user-wants-to-embed"
+                                                    )
+                                                    .focus();
+                                            }}
+                                        >
+                                            Embed Link
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <div
+                                            onKeyUp={() => {}}
+                                            id="wysiwyg-text-area"
+                                            className="w-100"
+                                            contentEditable="true"
+                                            suppressContentEditableWarning={
+                                                true
+                                            }
+                                            onClick={() => {}}
+                                        ></div>
+                                    </div>
                                 </div>
                             </div>
                             <div
@@ -101,7 +119,23 @@ export default class Wysiwyg extends React.Component {
                                         <label className="text-center">
                                             Enter URL Below
                                         </label>
-                                        <input className="form-control"></input>
+                                        <input
+                                            className="form-control"
+                                            id="what-the-user-wants-to-embed"
+                                        ></input>
+                                        <button
+                                            onClick={() => {
+                                                this.unBlurBackground();
+                                                this.makeItALink();
+                                                this.setState({
+                                                    whatsBeingEmbeded: document.getElementById(
+                                                        "what-the-user-wants-to-embed"
+                                                    ).value,
+                                                });
+                                            }}
+                                        >
+                                            Embed
+                                        </button>
                                     </div>
                                 </div>
                             </div>
