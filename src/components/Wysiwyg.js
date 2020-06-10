@@ -12,69 +12,17 @@ export default class Wysiwyg extends React.Component {
     }
 
     makeItBold() {
-        const splitAtHighlighted = this.state.WhatsInTheBox.split(
-            this.state.whatsHighlighted
-        );
-        const getItinThere = splitAtHighlighted.flatMap(
-            (value, index, array) => {
-                if (array.length - 1 !== index) {
-                    return [value, this.state.whatsHighlighted];
-                } else return value;
-            }
-        );
-        const arrOfObjects = [];
-        for (let i = 0; i < getItinThere.length; i += 1) {
-            if (getItinThere[i] === this.state.whatsHighlighted) {
-                arrOfObjects.push({
-                    string: getItinThere[i],
-                    needsBolded: true,
-                });
-            } else {
-                arrOfObjects.push({
-                    string: getItinThere[i],
-                    needsBolded: false,
-                });
-            }
-        }
-        const newArr = [];
-        for (let i = 0; i < arrOfObjects.length; i += 1) {
-            if (arrOfObjects[i].needsBolded === true) {
-                newArr.push(
-                    <b key={Math.random()}>{arrOfObjects[i].string}</b>
-                );
-            } else {
-                newArr.push(arrOfObjects[i].string);
-            }
-        }
-        console.log(newArr);
-        this.setState({ WhatsInTheBox: newArr });
-        return newArr;
+        document.execCommand("bold", false);
         // seperate into objects
         // add a span to every section whos key value implies it should be bold
     }
     makeItItalic() {
-        if (this.state.IsItItalic === "false") {
-            document.getElementById("wysiwyg-text-area").style.fontStyle =
-                "italic";
-            this.setState({
-                IsItItalic: "true",
-            });
-        } else {
-            document.getElementById("wysiwyg-text-area").style.fontStyle =
-                "normal";
-            this.setState({
-                IsItItalic: "false",
-            });
-        }
-        console.log(this.state.IsItItalic);
+        document.execCommand("italic", false);
     }
 
-    makeItHighlighted() {
-        document.getElementById("wysiwyg-text-area").innerHTML = [
-            <span style={{ color: "red" }} key={Math.random}>
-                {this.state.WhatsInTheBox}
-            </span>,
-        ];
+    makeItALink() {
+        let whatTheyWant = "www.google.com";
+        document.execCommand("createLink", false, whatTheyWant);
     }
     getWhatsHighlighted() {
         let text = "";
@@ -102,13 +50,14 @@ export default class Wysiwyg extends React.Component {
 
     render() {
         return (
-            <div className="background-image">
+            <div className="background-image" id="everything-wrapped-up">
                 <div className="container">
                     <div className="row">
-                        <div className="col-8">
+                        <div className="col-8 offset-2">
                             <div className="card">
-                                <div className="btn-block">
+                                <div className="btn-group">
                                     <button
+                                        className="btn btn-outline-dark"
                                         onClick={() => {
                                             this.makeItBold();
                                         }}
@@ -116,6 +65,7 @@ export default class Wysiwyg extends React.Component {
                                         Bold
                                     </button>
                                     <button
+                                        className="btn btn-outline-dark"
                                         onClick={() => {
                                             this.makeItItalic();
                                         }}
@@ -123,39 +73,35 @@ export default class Wysiwyg extends React.Component {
                                         Italics
                                     </button>
                                     <button
+                                        className="btn btn-outline-dark"
                                         onClick={() => {
-                                            this.makeItHighlighted();
+                                            this.makeItALink();
                                         }}
                                     >
-                                        Highlight
+                                        Embed Link
                                     </button>
                                 </div>
                                 <div>
                                     <div
-                                        onKeyUp={() => {
-                                            this.getWhatsHighlighted();
-                                            this.setState({
-                                                WhatsInTheBox: document.getElementById(
-                                                    "wysiwyg-text-area"
-                                                ).innerHTML,
-                                            });
-                                            console.log(
-                                                this.state.WhatsInTheBox,
-                                                document.activeElement,
-                                                document.getElementById(
-                                                    "wysiwyg-text-area"
-                                                ).innerText
-                                            );
-                                        }}
+                                        onKeyUp={() => {}}
                                         id="wysiwyg-text-area"
                                         className="w-100"
                                         contentEditable="true"
                                         suppressContentEditableWarning={true}
-                                        onClick={() => {
-                                            this.getWhatsHighlighted();
-                                        }}
-                                    >
-                                        {this.state.WhatsInTheBox}
+                                        onClick={() => {}}
+                                    ></div>
+                                </div>
+                            </div>
+                            <div
+                                className="col-4 offset-4"
+                                id="pop-up-url-input"
+                            >
+                                <div className="card">
+                                    <div className="card-body text-center">
+                                        <label className="text-center">
+                                            Enter URL Below
+                                        </label>
+                                        <input className="form-control"></input>
                                     </div>
                                 </div>
                             </div>
