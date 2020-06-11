@@ -63,7 +63,10 @@ export default class Wysiwyg extends React.Component {
                     <div className="row">
                         <div className="col-8 offset-2">
                             <div>
-                                <iframe src="/editable-part"></iframe>
+                                <iframe
+                                    src="/editable-part"
+                                    className="col-12"
+                                ></iframe>
                                 <div className="card" id="the-wysiwyg-itself">
                                     <div className="btn-group">
                                         <button

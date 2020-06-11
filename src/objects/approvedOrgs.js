@@ -31,8 +31,8 @@ export const approvedOrgs = [
     },
     {
         id: 7,
-        name: "American Civil Liberties Union Foundation",
-        domain: "aclu.org",
+        name: "Innocence Project",
+        domain: "innocenceproject.org",
     },
     {
         id: 8,
