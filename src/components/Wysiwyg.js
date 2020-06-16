@@ -18,7 +18,7 @@ export default class Wysiwyg extends React.Component {
     makeItItalic() {
         document.execCommand("italic", false);
     }
-
+    
     makeItALink() {
         let whatTheyWant = document.getElementById(
             "what-the-user-wants-to-embed"
