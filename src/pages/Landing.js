@@ -13,6 +13,7 @@ export default class Landing extends React.Component {
             cardDisplayCreate: "none",
             emailNotApprovedOrgWarning: "none",
             marginBetweenStatementAndCards: "mb-8",
+            //add state(hasBeenScrolled), boolean, if the window has been scrolled(true), then onclick of button go back to top
         };
     }
 
@@ -30,7 +31,7 @@ export default class Landing extends React.Component {
             this.setState({ marginBetweenStatementAndCards: "mb-6" });
         }
 
-        console.log(e.target.id);
+        console.log(Boolean(NaN));
     };
     isTheEmailValidOrganization = () => {
         const listOfOrgs = approvedOrgs.map((things) => things.domain);
@@ -46,12 +47,12 @@ export default class Landing extends React.Component {
     render() {
         //const props = this.props;
         return (
-            <div className="background-image">
+            <div className="">
                 <div className="container">
                     <div className="row all-v">
                         <div className="col-lg-4 mt-6 ">
                             <div
-                                className="d-flex align-items-start flex-column  sticky-top"
+                                className="d-flex align-items-start flex-column col-lg col-6 sticky-top mx-auto"
                                 style={{ height: "95vh" }}
                             >
                                 <div
@@ -70,134 +71,33 @@ export default class Landing extends React.Component {
                                         blah blah blah blah blah blah
                                     </p>
                                 </div>
-                                <div className="mb-auto w-100">
-                                    <button
-                                        id="sign-in-or-create-button"
-                                        className="btn btn-primary"
-                                        style={{
-                                            display: this.state.buttonDisplay,
-                                        }}
-                                        onClick={(e) => {
-                                            this.changeDisplayButton(e);
-                                        }}
-                                    >
-                                        <h2 id="sign-in-or-create-button-text">
-                                            Admins, sign in Here, or Create an
-                                            account
-                                        </h2>
-                                    </button>
-                                    <div className="card">
-                                        <div
-                                            id="sign-in-card"
-                                            className="card-body"
-                                            style={{
-                                                display: this.state
-                                                    .cardDisplayLogin,
-                                            }}
-                                        >
-                                            <h5 className="card-title text-center">
-                                                Login, Inform People
-                                            </h5>
-                                            <form className="form-group text-center">
-                                                <label htmlFor="email-login">
-                                                    Organization Email
-                                                </label>
-                                                <input
-                                                    id="email-login"
-                                                    className=" form-control"
-                                                ></input>
-                                                <label
-                                                    htmlFor="password-login"
-                                                    className="text-center"
-                                                >
-                                                    Password
-                                                </label>
-                                                <input
-                                                    id="password-login"
-                                                    className=" form-control"
-                                                ></input>
-                                            </form>
-                                            <Link
-                                                to="/all-cases-admin"
-                                                className="btn btn-dark btn-block"
-                                            >
-                                                Login
-                                            </Link>
-                                            <button
-                                                id="show-create-card-button"
-                                                className="btn btn-dark btn-block my-2"
-                                                onClick={(e) => {
-                                                    this.changeDisplayButton(e);
-                                                }}
-                                            >
-                                                Create an Account
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div className="card">
-                                        <div
-                                            id="create-account-card"
-                                            className="card-body"
-                                            style={{
-                                                display: this.state
-                                                    .cardDisplayCreate,
-                                            }}
-                                        >
-                                            <h5 className="card-title text-center">
-                                                Login, Inform People
-                                            </h5>
-                                            <form className="form-group text-center">
-                                                <label htmlFor="email-login">
-                                                    Organization Email
-                                                </label>
-                                                <input
-                                                    onChange={() => {}}
-                                                    id="email-create"
-                                                    className=" form-control"
-                                                ></input>
-                                                <div
-                                                    id="email-creation-invalid"
-                                                    className="text-danger"
-                                                    style={{
-                                                        display: this.state
-                                                            .emailNotApprovedOrgWarning,
-                                                    }}
-                                                >
-                                                    Hey that's not okay
-                                                </div>
-                                                <label
-                                                    htmlFor="password-create"
-                                                    className="text-center"
-                                                >
-                                                    Password
-                                                </label>
-                                                <input
-                                                    id="password-login"
-                                                    className=" form-control"
-                                                ></input>
-                                            </form>
-                                            <button
-                                                className="btn btn-dark btn-block"
-                                                onClick={() => {
-                                                    this.isTheEmailValidOrganization();
-                                                }}
-                                            >
-                                                Create Account
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="position-fixedmt-auto text-white">
+                                <button
+                                    className="btn btn-dark text-light btn-block"
+                                    onClick={() => {
+                                        window.scrollTo(0, 0);
+                                    }}
+                                >
+                                    Back To Top
+                                </button>
+                                <div className="mt-9 mb-lg-0 mb-9 text-lg-left text-center mt-lg-auto align-bottom">
                                     <h1>IN ° VOLVE</h1>
                                     <h3>
-                                        cause (a person or group) to experience
-                                        or participate in an activity or
-                                        situation.
+                                        To cause (a person or group) to
+                                        experience or participate in an activity
+                                        or situation.
                                     </h3>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-7 mt-6 offset-lg-1">
+                        <div className="col-lg-7 offset-lg-1">
+                            <div className="">
+                                <Link to="/login" className="float-right">
+                                    <h3>
+                                        <b>...</b>
+                                    </h3>
+                                </Link>
+                            </div>
+                            <div className="clearfix"></div>
                             <div>
                                 <CaseOverview
                                     id="hello"
@@ -212,31 +112,6 @@ export default class Landing extends React.Component {
                                     name="Clemente Aguirre-Jarquin"
                                     url="https://www.innocenceproject.org/wp-content/uploads/2018/11/IMG_0389-768x527.jpg"
                                 />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
-                                <CaseOverview />
                             </div>
                         </div>
                     </div>

@@ -19,7 +19,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build; echo caring-trousers.surge.sh > build/CNAME",
+        "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
