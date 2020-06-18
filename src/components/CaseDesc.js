@@ -1,5 +1,6 @@
 import React from "react";
 import { caseInformation } from "../objects/caseInformation";
+import ContactInfo from "./ContactInfo";
 
 const exampleCase = caseInformation[1];
 
@@ -8,6 +9,7 @@ export default class CaseDesc extends React.Component {
         super();
         this.state = {};
     }
+
     render() {
         return (
             <div>
@@ -44,10 +46,7 @@ export default class CaseDesc extends React.Component {
                         <p>{exampleCase.backgroundInformation}</p>
                     </div>
                     <div id="right-text" className="col-4">
-                        {/* {exampleCase.howToContact.map((object) => {
-                            return <p>{object.howToContact}</p>;
-                        })} */}
-                        {/* <p>{exampleCase.howToContact[1]}</p> */}
+                        <ContactInfo case={exampleCase} />
                     </div>
                 </div>
 
