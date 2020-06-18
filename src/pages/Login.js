@@ -81,7 +81,7 @@ export default class Login extends React.Component {
                                         ></input>
                                     </form>
                                     <Link
-                                        to="/all-cases"
+                                        to="/all-cases-admin"
                                         className="btn btn-dark"
                                     >
                                         Login
@@ -117,7 +117,7 @@ export default class Login extends React.Component {
                                     </form>
                                     <Link
                                         className="btn btn-dark"
-                                        to="/all-cases"
+                                        to="/all-cases-admin"
                                     >
                                         Create
                                     </Link>

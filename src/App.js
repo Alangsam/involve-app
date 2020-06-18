@@ -6,6 +6,7 @@ import AllCasesAdmin from "./pages/AllCasesAdmin";
 import CaseFile from "./pages/CaseFile";
 import CaseFileEdit from "./pages/CaseFileEdit";
 import Login from "./pages/Login";
+import CreateCase from "./pages/CreateCase";
 
 export default function App() {
     return (
@@ -20,6 +21,7 @@ export default function App() {
                 <Route exact path="/case-name" component={CaseFile} />
                 <Route exact path="/case-name-edit" component={CaseFileEdit} />
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/case-new" component={CreateCase} />
             </Switch>
         </Router>
     );
