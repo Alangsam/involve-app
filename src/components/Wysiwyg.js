@@ -24,6 +24,7 @@ class Wysiwyg extends Component {
 
         // If the user changes block type before entering any text, we can
         // either style the placeholder or hide it. Let's just hide it now.
+        // eslint-disable-next-line
         let className = "RichEditor-editor";
         var contentState = editorState.getCurrentContent();
         if (!contentState.hasText()) {
@@ -33,7 +34,7 @@ class Wysiwyg extends Component {
         }
         return (
             <div>
-                <div className="RichEditor-root">
+                <div className="RichEditor-root pb-6">
                     <InlineStyleControls
                         editorState={editorState}
                         onToggle={this.toggleInlineStyle}
@@ -41,12 +42,22 @@ class Wysiwyg extends Component {
                     <Editor
                         editorState={this.state.editorState}
                         onChange={this.onChange}
+                        customStyleMap={styleMap}
+                        spellCheck={true}
                     />
                 </div>
             </div>
         );
     }
 }
+const styleMap = {
+    CODE: {
+        backgroundColor: "rgba(0, 0, 0, 0.05)",
+        fontFamily: '"Inconsolata", "Menlo", "Consolas", monospace',
+        fontSize: 16,
+        padding: 2,
+    },
+};
 
 class StyleButton extends React.Component {
     constructor() {
@@ -57,12 +68,12 @@ class StyleButton extends React.Component {
         };
     }
     render() {
-        let className = "RichEditor-styleButton";
-        if (this.props.active) {
-            className += " RichEditor-activeButton";
-        }
+        // let className = "RichEditor-styleButton";
+        // if (this.props.active) {
+        //     className += " RichEditor-activeButton";
+        // }
         return (
-            <button className={className} onMouseDown={this.onToggle}>
+            <button className={"btn border"} onMouseDown={this.onToggle}>
                 {this.props.label}
             </button>
         );
@@ -91,7 +102,7 @@ const INLINE_STYLES = [
 const InlineStyleControls = (props) => {
     var currentStyle = props.editorState.getCurrentInlineStyle();
     return (
-        <div className="RichEditor-controls">
+        <div className="d-flex btn-group px-0 border-bottom border-dark">
             {INLINE_STYLES.map((type) => (
                 <StyleButton
                     key={type.label}

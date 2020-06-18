@@ -1,48 +1,68 @@
 import React from "react";
+import Wysiwyg from "../components/Wysiwyg";
 import { Link } from "react-router-dom";
 
-export default function CaseFileEdit() {
-    return (
-        <div className="background-image">
-            <div className="container">
-                <div className="row">
-                    <div className="col-12 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-light">
-                        <div className="">
-                            <Link
-                                to="/all-cases-admin"
-                                className="btn text-light"
+export default class CaseFileEdit extends React.Component {
+    render() {
+        return (
+            <div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="d-inline">
+                                <h4 className="d-inline">Logged in as:</h4>
+                                <h5 className="d-inline">
+                                    Alex Langsam / red Cross
+                                </h5>
+                                <Link
+                                    to="/case-name"
+                                    className="float-right d-inline text-dark"
+                                >
+                                    back
+                                </Link>
+                            </div>
+                            <div className="clearfix py-4"></div>
+                            <div className="col-4 text-center">
+                                <label className="text-center">
+                                    Case Title/Name
+                                </label>
+                                <input className="form-control"></input>
+                            </div>
+                            <div className="clearfix py-4"></div>
+                            <div className="col-4 ">
+                                <input
+                                    type="file"
+                                    className="form-control-file"
+                                ></input>
+                            </div>
+                            <div className="clearfix py-4"></div>
+                            <div className="col-4 text-center">
+                                <label className="text-center">
+                                    What Needs Involvement
+                                </label>
+                                <input className="form-control"></input>
+                            </div>
+                            <div className="clearfix py-4"></div>
+                            <div
+                                id="text editor"
+                                className="border border-bottom-0 rounded-top border-dark w-50"
                             >
-                                Back
-                            </Link>
-                            <Link to="/" className="btn text-light float-right">
-                                Signout
-                            </Link>
-                        </div>
-                        <div className="text-center text-light">
-                            <h1>Joseph Abbitt</h1>
-                        </div>
-                        <img
-                            className="w-100 rounded"
-                            src="https://www.innocenceproject.org/wp-content/uploads/2016/02/8f038d8e-e7ae-4ea0-bc1c-c5632286e9d6.jpeg"
-                            alt="my guy"
-                        />
-                        <p>What Happened: </p>
-                        <p>What they need:</p>
-                        <p>Humanizing Description: </p>
-                        <p>Who To Contact: </p>
-                        <p>How to contact: </p>
-                        <p>Where is this taking Place:</p>
-                        <div className="mt-9">
-                            <h6 className="d-inline-block align-bottom">
-                                Last updated: 3/13/20 04:23
-                            </h6>
-                            <h6 className="float-md-right d-inline-block align-bottom">
-                                By: Alex Langsam, blahOrg, 827364284
-                            </h6>
+                                <Wysiwyg></Wysiwyg>
+                            </div>
+                            <button
+                                className="btn-dark w-50 rounded-bottom"
+                                type="submit"
+                            >
+                                Save
+                            </button>
+                            <div>
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
 }

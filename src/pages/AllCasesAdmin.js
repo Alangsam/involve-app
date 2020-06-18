@@ -1,7 +1,7 @@
 import React from "react";
 import MakeEmSidebySide from "../components/MakeEmSidebySide";
 import { Link } from "react-router-dom";
-import CaseOverview from "../components/CaseOverview";
+import CaseOverviewEdit from "../components/CaseOverviewEdit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
@@ -48,28 +48,28 @@ export default function AllCasesAdmin() {
                     <div className="row">
                         <div className="col-12">
                             <MakeEmSidebySide side="left">
-                                <CaseOverview
+                                <CaseOverviewEdit
                                     id="hello"
                                     name="Joseph Abbitt"
                                     url="https://www.innocenceproject.org/wp-content/uploads/2016/02/8f038d8e-e7ae-4ea0-bc1c-c5632286e9d6.jpeg"
                                 />
                             </MakeEmSidebySide>
                             <MakeEmSidebySide side="right">
-                                <CaseOverview
+                                <CaseOverviewEdit
                                     id="hello"
                                     name="Christopher Abernathy"
                                     url="https://www.innocenceproject.org/wp-content/uploads/2016/02/925b00c6-b04b-44b9-938b-a3fa387373c0.jpeg"
                                 />
                             </MakeEmSidebySide>
                             <MakeEmSidebySide side="left">
-                                <CaseOverview
+                                <CaseOverviewEdit
                                     id="hello"
                                     name="Clemente Aguirre-Jarquin"
                                     url="https://www.innocenceproject.org/wp-content/uploads/2018/11/IMG_0389-768x527.jpg"
                                 />
                             </MakeEmSidebySide>
                             <MakeEmSidebySide side="right">
-                                <CaseOverview
+                                <CaseOverviewEdit
                                     id="hello"
                                     name="Joseph Abbitt"
                                     url="https://www.innocenceproject.org/wp-content/uploads/2016/02/8f038d8e-e7ae-4ea0-bc1c-c5632286e9d6.jpeg"
