@@ -1,5 +1,4 @@
 import React from "react";
-import { approvedOrgs } from "../objects/approvedOrgs";
 import { Link } from "react-router-dom";
 import Wysiwyg from "../components/Wysiwyg";
 

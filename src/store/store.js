@@ -4,7 +4,8 @@ import combineReducer from "./combineReducers";
 
 const initialState = {
     allCases: [],
-    AdminAccount: {},
+    indexOfSelectedCase: 0,
+    adminAccount: {},
 };
 
 const store = createStore(combineReducer, initialState, composeWithDevTools());

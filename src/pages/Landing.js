@@ -4,29 +4,33 @@ import "../style/master.scss"; //import my custom bootstrap
 import { approvedOrgs } from "../objects/approvedOrgs";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { connect } from "react-redux";
+import actions from "../store/actions";
 
-export default class Landing extends React.Component {
-    constructor() {
-        super();
+class Landing extends React.Component {
+    constructor(props) {
+        super(props);
         this.state = {
             buttonDisplay: "",
             cardDisplayLogin: "none",
             cardDisplayCreate: "none",
             emailNotApprovedOrgWarning: "none",
             marginBetweenStatementAndCards: "mb-8",
+
             //add state(hasBeenScrolled), boolean, if the window has been scrolled(true), then onclick of button go back to top
         };
-    }
-    componentDidMount() {
         axios
             .get(
                 "https://raw.githubusercontent.com/Alangsam/involve-app/master/src/objects/caseInformation.json"
             )
-            .then(function (response) {
+            .then((response) => {
                 // handle success
-                console.log(response.data);
+                props.dispatch({
+                    type: actions.STORE_ALL_CASES,
+                    payload: response.data,
+                });
             })
-            .catch(function (error) {
+            .catch((error) => {
                 // handle error
                 console.log(error);
             });
@@ -45,8 +49,6 @@ export default class Landing extends React.Component {
             this.setState({ cardDisplayCreate: "" });
             this.setState({ marginBetweenStatementAndCards: "mb-6" });
         }
-
-        console.log(Boolean(NaN));
     };
     isTheEmailValidOrganization = () => {
         const listOfOrgs = approvedOrgs.map((things) => things.domain);
@@ -61,6 +63,7 @@ export default class Landing extends React.Component {
 
     render() {
         //const props = this.props;
+        console.log(this.props.allCases);
         return (
             <div className="">
                 <div className="container">
@@ -108,24 +111,26 @@ export default class Landing extends React.Component {
                                 </Link>
                             </div>
                             <div className="clearfix"></div>
+
                             <div>
-                                <CaseOverview
-                                    id="hello"
-                                    name="Joseph Abbitt"
-                                    url="https://www.innocenceproject.org/wp-content/uploads/2016/02/8f038d8e-e7ae-4ea0-bc1c-c5632286e9d6.jpeg"
-                                />
-                                <CaseOverview
-                                    name="American Heart Association"
-                                    url="https://static.heart.org/Volunteer/img/crowd.jpg"
-                                />
-                                <CaseOverview
-                                    name="Hafez Ibrahim"
-                                    url="https://aineupstrmediaprd.blob.core.windows.net/media/15034/65454.jpg?width=500&height=211.19791666666669"
-                                />
-                                <CaseOverview
-                                    name="Census 2020"
-                                    url="https://www.nypl.org/sites/default/files/census_horz_lock_up_040120v3.jpg"
-                                />
+                                {this.props.allCases.length > 0 &&
+                                    this.props.allCases.map((object, index) => {
+                                        const url = object.urlOfPicture;
+                                        const name = object.nameOfPersonOrGroup;
+                                        const description =
+                                            object.backgroundInformation;
+                                        const user = object.whoUpdatedLast[0];
+                                        return (
+                                            <CaseOverview
+                                                key={index}
+                                                id={index}
+                                                name={name}
+                                                url={url}
+                                                description={description}
+                                                user={user}
+                                            />
+                                        );
+                                    })}
                             </div>
                         </div>
                     </div>
@@ -134,3 +139,11 @@ export default class Landing extends React.Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        allCases: state.allCases,
+    };
+}
+
+export default connect(mapStateToProps)(Landing);
