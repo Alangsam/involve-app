@@ -1,21 +1,21 @@
 const caseInformation = [
     {
-        nameOfPersonOrGroup: "Kenneth, Walker",
+        nameOfPersonOrGroup: "Census 2020",
         urlOfPicture:
-            "https://www.insideedition.com/sites/default/files/images/2020-05/walkertayloer.jpg",
-        whatHappened:
-            "police raided the wrong house, shot his girlfreind to death, and because he returned fire he is in prison",
-        whatTheyNeedYouToBeInvolvedIn: "legal support, financial support",
+            "https://www.nypl.org/sites/default/files/census_horz_lock_up_040120v3.jpg",
+        whatHappened: "Take the 2020 Census",
         backgroundInformation:
-            "son of two loving parents, devoted signifant other, played football in highschool, public servant",
-        whoYouShouldContact: "Louisville Metro Police.",
+            "Every 10 years, the United States takes a count of every person living here. The Census is so much more than just a count. Even with the current spread of coronavirus (COVID-19) in New York City, it is as important as ever to get an accurate count of every New Yorker. Federal funding determined by Census response rates are key to supporting the health of our communities long-term.",
+        whoToContact: ["Cencus Online", "Census by Phone", "NYPL"],
         howToContact: [
-            "502-574-7060",
-            "633 W Jefferson Street, Louisville, KY 40202",
+            "Cencus Online: https://my2020census.gov/",
+
+            "Census by Phone: 8443302020",
+            "NYPL: https://www.nypl.org/census2020",
         ],
-        whereIsThisTakingPlace: "Louisville, Kentucky, mideast",
+        whereIsThisTakingPlace: ["United States"],
         LastDateInformationUpdated: 1591899362,
-        whoUpdatedLast: ["paulasanchez10", "innocence project"],
+        whoUpdatedLast: ["advantageousbrandan", "New York Public Library"],
     },
     {
         nameOfPersonOrGroup: "Joseph Abbit",
@@ -39,40 +39,37 @@ const caseInformation = [
         whoUpdatedLast: ["paulasanchez10", "innocence project"],
     },
     {
-        nameOfPersonOrGroup: "Kenneth, Walker",
-        urlOfPicture:
-            "https://www.insideedition.com/sites/default/files/images/2020-05/walkertayloer.jpg",
-        whatHappened:
-            "police raided the wrong house, shot his girlfreind to death, and because he returned fire he is in prison",
-        whatTheyNeedYouToBeInvolvedIn: "legal support, financial support",
+        nameOfPersonOrGroup: "American Heart Association",
+        urlOfPicture: "https://static.heart.org/Volunteer/img/crowd.jpg",
+        whatHappened: "Prevent Heart Disease",
         backgroundInformation:
-            "son of two loving parents, devoted signifant other, played football in highschool, public servant",
-        whoYouShouldContact: "Louisville Metro Police.",
+            "Advocate for grassroots change in federal, state and local policies to let us all live healthier lives.",
+        whoToContact: ["AHA", "Your Representative"],
         howToContact: [
-            "502-574-7060",
-            "633 W Jefferson Street, Louisville, KY 40202",
+            "AHA: https://www.heart.org/HEARTORG/volunteer/volunteerForm.jsp",
+            "Representavive: https://www.house.gov/representatives/find-your-representative",
         ],
-        whereIsThisTakingPlace: "Louisville, Kentucky, mideast",
+        whereIsThisTakingPlace: ["United States"],
         LastDateInformationUpdated: 1591899362,
-        whoUpdatedLast: ["paulasanchez10", "innocence project"],
+        whoUpdatedLast: ["joe_ward_12", "American Heart Association"],
     },
     {
-        nameOfPersonOrGroup: "Kenneth, Walker",
+        nameOfPersonOrGroup: "Hafez Ibrahim",
         urlOfPicture:
-            "https://www.insideedition.com/sites/default/files/images/2020-05/walkertayloer.jpg",
-        whatHappened:
-            "police raided the wrong house, shot his girlfreind to death, and because he returned fire he is in prison",
-        whatTheyNeedYouToBeInvolvedIn: "legal support, financial support",
+            "https://aineupstrmediaprd.blob.core.windows.net/media/15034/65454.jpg?width=500&height=211.19791666666669",
+        whatHappened: "Facing Exocution",
         backgroundInformation:
-            "son of two loving parents, devoted signifant other, played football in highschool, public servant",
-        whoYouShouldContact: "Louisville Metro Police.",
+            "Thanks to Amnesty’s campaigning efforts, the execution of Hafez Ibrahim, from Yemen, was stopped not once, but twice. Hafez, who was accused of a crime he insists he didn’t commit, first faced a firing squad in 2005. He was taken to a small yard in a Yemeni prison and brought before a row of officers with rifles in hand. He thought that moment would be his last.",
+        whoToContact: ["Hafez", "Amnesty", "Your Representative"],
         howToContact: [
-            "502-574-7060",
-            "633 W Jefferson Street, Louisville, KY 40202",
+            "Hafez: 4783920389",
+
+            "Amnesty: AmnestyContact@gmail.com",
+            "Representative: https://www.house.gov/representatives/find-your-representative",
         ],
-        whereIsThisTakingPlace: "Louisville, Kentucky, mideast",
+        whereIsThisTakingPlace: ["Yemen"],
         LastDateInformationUpdated: 1591899362,
-        whoUpdatedLast: ["paulasanchez10", "innocence project"],
+        whoUpdatedLast: ["carl.kevia.hernandez", "Amnesty International"],
     },
 ];
 

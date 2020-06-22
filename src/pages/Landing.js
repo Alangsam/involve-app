@@ -100,12 +100,16 @@ export default class Landing extends React.Component {
                                     url="https://www.innocenceproject.org/wp-content/uploads/2016/02/8f038d8e-e7ae-4ea0-bc1c-c5632286e9d6.jpeg"
                                 />
                                 <CaseOverview
-                                    name="Christopher Abernathy"
-                                    url="https://www.innocenceproject.org/wp-content/uploads/2016/02/925b00c6-b04b-44b9-938b-a3fa387373c0.jpeg"
+                                    name="American Heart Association"
+                                    url="https://static.heart.org/Volunteer/img/crowd.jpg"
                                 />
                                 <CaseOverview
-                                    name="Clemente Aguirre-Jarquin"
-                                    url="https://www.innocenceproject.org/wp-content/uploads/2018/11/IMG_0389-768x527.jpg"
+                                    name="Hafez Ibrahim"
+                                    url="https://aineupstrmediaprd.blob.core.windows.net/media/15034/65454.jpg?width=500&height=211.19791666666669"
+                                />
+                                <CaseOverview
+                                    name="Census 2020"
+                                    url="https://www.nypl.org/sites/default/files/census_horz_lock_up_040120v3.jpg"
                                 />
                             </div>
                         </div>
