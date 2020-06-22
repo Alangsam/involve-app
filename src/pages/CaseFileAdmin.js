@@ -8,7 +8,7 @@ export default class CaseFileAdmin extends React.Component {
             <div className="">
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-dark">
+                        <div className="col-md-8 offset-md-2 text-dark">
                             <div className="">
                                 <Link
                                     to="/all-cases-admin"

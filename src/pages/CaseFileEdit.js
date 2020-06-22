@@ -15,7 +15,7 @@ export default class CaseFileEdit extends React.Component {
                                     Alex Langsam / red Cross
                                 </h5>
                                 <Link
-                                    to="/case-name"
+                                    to="/case-name-admin"
                                     className="float-right d-inline text-dark"
                                 >
                                     back

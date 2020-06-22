@@ -58,27 +58,22 @@ export default class Landing extends React.Component {
                                 <div
                                     className={`card ${this.state.marginBetweenStatementAndCards} bg-transparent border-none`}
                                 >
-                                    <h2 className="text-center">Involve</h2>
-                                    <p className="text-center">
-                                        blah blah blah blah blah blah blah blah
-                                        blah blah blah blah blah blah blah blah
-                                        blah blah blah blah blah blah blah blah
-                                        blah blah blah blah blah blah blah blah
-                                        blah blah blah blah blah blah blah blah
-                                        blah blah blah blah blah blah blah blah
-                                        blah blah blah blah blah blah blah blah
-                                        blah blah blah blah blah blah blah blah
-                                        blah blah blah blah blah blah
-                                    </p>
+                                    <h1 className="text-center">Involve</h1>
+                                    <h4 className="text-center">
+                                        Here you can involve yourself, in all
+                                        the systematic problems that the public
+                                        sector has both created and refused to
+                                        solve
+                                    </h4>
                                 </div>
-                                <button
+                                {/* <button
                                     className="btn btn-dark text-light btn-block"
                                     onClick={() => {
                                         window.scrollTo(0, 0);
                                     }}
                                 >
                                     Back To Top
-                                </button>
+                                </button> */}
                                 <div className="mt-9 mb-lg-0 mb-9 text-lg-left text-center mt-lg-auto align-bottom">
                                     <h1>IN ° VOLVE</h1>
                                     <h3>
