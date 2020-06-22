@@ -20,7 +20,7 @@ export default class Landing extends React.Component {
     componentDidMount() {
         axios
             .get(
-                "https://raw.githubusercontent.com/Alangsam/involve-app/master/src/objects/caseInformation.js"
+                "https://raw.githubusercontent.com/Alangsam/involve-app/master/src/objects/caseInformation.json"
             )
             .then(function (response) {
                 // handle success
