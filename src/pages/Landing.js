@@ -3,6 +3,7 @@ import CaseOverview from "../components/CaseOverview";
 import "../style/master.scss"; //import my custom bootstrap
 import { approvedOrgs } from "../objects/approvedOrgs";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default class Landing extends React.Component {
     constructor() {
@@ -15,6 +16,20 @@ export default class Landing extends React.Component {
             marginBetweenStatementAndCards: "mb-8",
             //add state(hasBeenScrolled), boolean, if the window has been scrolled(true), then onclick of button go back to top
         };
+    }
+    componentDidMount() {
+        axios
+            .get(
+                "https://raw.githubusercontent.com/Alangsam/involve-app/master/src/objects/caseInformation.js"
+            )
+            .then(function (response) {
+                // handle success
+                console.log(response.data);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
     }
 
     changeDisplayButton = (e) => {
