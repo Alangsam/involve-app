@@ -73,7 +73,7 @@ class StyleButton extends React.Component {
         //     className += " RichEditor-activeButton";
         // }
         return (
-            <button className={"btn border"} onMouseDown={this.onToggle}>
+            <button className={"btn "} onMouseDown={this.onToggle}>
                 {this.props.label}
             </button>
         );
@@ -102,7 +102,7 @@ const INLINE_STYLES = [
 const InlineStyleControls = (props) => {
     var currentStyle = props.editorState.getCurrentInlineStyle();
     return (
-        <div className="d-flex btn-group px-0 border-bottom border-dark">
+        <div className=" border-bottom border-dark">
             {INLINE_STYLES.map((type) => (
                 <StyleButton
                     key={type.label}

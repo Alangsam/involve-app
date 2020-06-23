@@ -33,7 +33,7 @@ class AllCasesAdmin extends React.Component {
                 <div className="">
                     <div className="text-center">
                         <Link to="/" className="btn  pb-0">
-                            <h6>Back To Home</h6>
+                            <h6>Log out</h6>
                         </Link>
                         <Link to="/case-new" className="btn  pb-0">
                             <h6>Create New </h6>
