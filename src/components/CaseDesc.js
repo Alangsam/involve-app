@@ -1,16 +1,15 @@
 import React from "react";
-import { caseInformation } from "../objects/caseInformation";
 import ContactInfo from "./ContactInfo";
+import { connect } from "react-redux";
 
-const exampleCase = caseInformation[1];
-
-export default class CaseDesc extends React.Component {
+class CaseDesc extends React.Component {
     constructor() {
         super();
         this.state = {};
     }
 
     render() {
+        const exampleCase = this.props.allCases[this.props.indexOfSelectedCase];
         return (
             <div>
                 <div className="text-center text-dark">
@@ -55,3 +54,12 @@ export default class CaseDesc extends React.Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        indexOfSelectedCase: state.indexOfSelectedCase,
+        allCases: state.allCases,
+    };
+}
+
+export default connect(mapStateToProps)(CaseDesc);

@@ -1,8 +1,10 @@
 import React from "react";
 import { approvedOrgs } from "../objects/approvedOrgs";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import actions from "../store/actions";
 
-export default class Login extends React.Component {
+class Login extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -39,6 +41,19 @@ export default class Login extends React.Component {
             this.setState({ emailNotApprovedOrgWarning: "none" });
         }
     };
+    storeAdminInfo() {
+        const adminAccount = {
+            userName: "paulasanchez10",
+            userEmail: "p.sanchez@innocenceproject.org",
+            userPassword: "paulalikesrunning",
+            createdDate: "1591898317",
+        };
+
+        this.props.dispatch({
+            type: actions.STORE_CURRENT_ADMIN,
+            payload: adminAccount,
+        });
+    }
 
     render() {
         return (
@@ -83,6 +98,9 @@ export default class Login extends React.Component {
                                     <Link
                                         to="/all-cases-admin"
                                         className="btn btn-dark"
+                                        onClick={() => {
+                                            this.storeAdminInfo();
+                                        }}
                                     >
                                         Login
                                     </Link>
@@ -118,6 +136,9 @@ export default class Login extends React.Component {
                                     <Link
                                         className="btn btn-dark"
                                         to="/all-cases-admin"
+                                        onClick={() => {
+                                            this.storeAdminInfo();
+                                        }}
                                     >
                                         Create
                                     </Link>
@@ -130,3 +151,11 @@ export default class Login extends React.Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        adminAccount: state.adminAccount,
+    };
+}
+
+export default connect(mapStateToProps)(Login);
