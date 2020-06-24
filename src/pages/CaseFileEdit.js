@@ -1,8 +1,9 @@
 import React from "react";
 import Wysiwyg from "../components/Wysiwyg";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default class CaseFileEdit extends React.Component {
+class CaseFileEdit extends React.Component {
     render() {
         return (
             <div>
@@ -22,11 +23,18 @@ export default class CaseFileEdit extends React.Component {
                                 </Link>
                             </div>
                             <div className="clearfix py-4"></div>
-                            <div className="col-md-4 offset-md-4 text-center">
+                            <div className="col-md-6 offset-md-3 text-center">
                                 <label className="text-center">
                                     <h5>Case Title/Name</h5>
                                 </label>
-                                <input className="form-control"></input>
+                                <input
+                                    className="form-control"
+                                    defaultValue={
+                                        this.props.allCases[
+                                            this.props.indexOfSelectedCase
+                                        ].nameOfPersonOrGroup
+                                    }
+                                ></input>
                                 <button
                                     className="btn btn-dark w-25 mt-2"
                                     type="submit"
@@ -35,13 +43,20 @@ export default class CaseFileEdit extends React.Component {
                                 </button>
                             </div>
                             <div className="clearfix py-4"></div>
-                            <div className="col-md-4 offset-md-4 text-center">
+                            <div className="col-md-6 offset-md-3 text-center">
                                 <h5>Upload Image or Enter URL</h5>
                                 <input
                                     type="file"
                                     className="form-control-file"
                                 ></input>
-                                <input className="form-control"></input>
+                                <input
+                                    className="form-control"
+                                    defaultValue={
+                                        this.props.allCases[
+                                            this.props.indexOfSelectedCase
+                                        ].urlOfPicture
+                                    }
+                                ></input>
                                 <button
                                     className="btn btn-dark w-25 mt-2"
                                     type="submit"
@@ -50,11 +65,18 @@ export default class CaseFileEdit extends React.Component {
                                 </button>
                             </div>
                             <div className="clearfix py-4"></div>
-                            <div className="col-md-4 offset-md-4 text-center">
+                            <div className="col-md-6 offset-md-3 text-center">
                                 <label className="text-center">
                                     <h5>What Needs Involvement</h5>
                                 </label>
-                                <input className="form-control"></input>
+                                <input
+                                    className="form-control"
+                                    defaultValue={
+                                        this.props.allCases[
+                                            this.props.indexOfSelectedCase
+                                        ].whatHappened
+                                    }
+                                ></input>
                                 <button
                                     className="btn btn-dark w-25 mt-2"
                                     type="submit"
@@ -91,14 +113,29 @@ export default class CaseFileEdit extends React.Component {
                                     <input
                                         id="Title-1"
                                         className="form-control "
+                                        defaultValue={
+                                            this.props.allCases[
+                                                this.props.indexOfSelectedCase
+                                            ].whoToContact[0]
+                                        }
                                     ></input>
                                     <input
                                         id="Title-2"
                                         className="form-control "
+                                        defaultValue={
+                                            this.props.allCases[
+                                                this.props.indexOfSelectedCase
+                                            ].whoToContact[1]
+                                        }
                                     ></input>
                                     <input
                                         id="Title-3"
                                         className="form-control "
+                                        defaultValue={
+                                            this.props.allCases[
+                                                this.props.indexOfSelectedCase
+                                            ].whoToContact[2]
+                                        }
                                     ></input>
                                 </div>
                                 <div className="col-lg-4 col-6 d-inline-block">
@@ -108,14 +145,29 @@ export default class CaseFileEdit extends React.Component {
                                     <input
                                         id="info-1"
                                         className="form-control "
+                                        defaultValue={
+                                            this.props.allCases[
+                                                this.props.indexOfSelectedCase
+                                            ].howToContact[0]
+                                        }
                                     ></input>
                                     <input
                                         id="info-2"
                                         className="form-control "
+                                        defaultValue={
+                                            this.props.allCases[
+                                                this.props.indexOfSelectedCase
+                                            ].howToContact[1]
+                                        }
                                     ></input>
                                     <input
                                         id="info-3"
                                         className="form-control "
+                                        defaultValue={
+                                            this.props.allCases[
+                                                this.props.indexOfSelectedCase
+                                            ].howToContact[2]
+                                        }
                                     ></input>
                                 </div>
                                 <div className="clearfix"></div>
@@ -126,11 +178,18 @@ export default class CaseFileEdit extends React.Component {
                                     Save
                                 </button>
                             </div>
-                            <div className="col-md-4 offset-md-4 text-center pt-3">
+                            <div className="col-md-6 offset-md-3 text-center pt-3">
                                 <label className="text-center">
                                     <h5>Location</h5>
                                 </label>
-                                <input className="form-control "></input>
+                                <input
+                                    className="form-control "
+                                    defaultValue={
+                                        this.props.allCases[
+                                            this.props.indexOfSelectedCase
+                                        ].whereIsThisTakingPlace
+                                    }
+                                ></input>
                                 <button
                                     className="btn btn-dark w-25 mt-2"
                                     type="submit"
@@ -138,7 +197,7 @@ export default class CaseFileEdit extends React.Component {
                                     Save
                                 </button>
                             </div>
-                            <div className="col-md-4 offset-md-4 text-center py-7">
+                            <div className="col-md-6 offset-md-3 text-center py-7">
                                 <button
                                     className="btn btn-danger w-100 mt-2 p-4"
                                     type="submit"
@@ -153,3 +212,13 @@ export default class CaseFileEdit extends React.Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        indexOfSelectedCase: state.indexOfSelectedCase,
+        allCases: state.allCases,
+        adminAccount: state.adminAccount,
+    };
+}
+
+export default connect(mapStateToProps)(CaseFileEdit);

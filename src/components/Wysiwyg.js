@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Editor, EditorState, RichUtils } from "draft-js";
-// import StyleButton from "../components/StyleButton";
+import { connect } from "react-redux";
 
 class Wysiwyg extends Component {
     constructor(props) {
@@ -25,15 +25,13 @@ class Wysiwyg extends Component {
         // If the user changes block type before entering any text, we can
         // either style the placeholder or hide it. Let's just hide it now.
         // eslint-disable-next-line
-        let className = "RichEditor-editor";
-        var contentState = editorState.getCurrentContent();
-        if (!contentState.hasText()) {
-            if (contentState.getBlockMap().first().getType() !== "unstyled") {
-                className += " RichEditor-hidePlaceholder";
-            }
-        }
+
         return (
-            <div>
+            <div
+                onClick={(e) => {
+                    console.log(e.target);
+                }}
+            >
                 <div className="RichEditor-root pb-6">
                     <InlineStyleControls
                         editorState={editorState}
@@ -44,6 +42,10 @@ class Wysiwyg extends Component {
                         onChange={this.onChange}
                         customStyleMap={styleMap}
                         spellCheck={true}
+                        placeholder={
+                            this.props.allCases[this.props.indexOfSelectedCase]
+                                .backgroundInformation
+                        }
                     />
                 </div>
             </div>
@@ -116,4 +118,12 @@ const InlineStyleControls = (props) => {
     );
 };
 
-export default Wysiwyg;
+function mapStateToProps(state) {
+    return {
+        indexOfSelectedCase: state.indexOfSelectedCase,
+        allCases: state.allCases,
+        adminAccount: state.adminAccount,
+    };
+}
+
+export default connect(mapStateToProps)(Wysiwyg);
