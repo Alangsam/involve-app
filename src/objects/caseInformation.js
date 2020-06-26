@@ -1,6 +1,6 @@
 const caseInformation = [
     {
-        nameOfPersonOrGroup: "WWWWWWWWWW",
+        nameOfPersonOrGroup: "Census 2020",
         urlOfPicture:
             "https://www.nypl.org/sites/default/files/census_horz_lock_up_040120v3.jpg",
         whatHappened: "Take the 2020 Census",
