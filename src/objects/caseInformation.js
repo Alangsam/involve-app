@@ -14,6 +14,7 @@ const caseInformation = [
             "NYPL: https://www.nypl.org/census2020",
         ],
         whereIsThisTakingPlace: ["United States"],
+        createdOn: 1591899362,
         LastDateInformationUpdated: 1591899362,
         whoUpdatedLast: ["advantageousbrandan", "New York Public Library"],
     },
@@ -35,7 +36,8 @@ const caseInformation = [
             "Winston-Salem, North Carolina",
             "southeast U.S.",
         ],
-        LastDateInformationUpdated: 1591899362,
+        createdOn: 1591899462,
+        LastDateInformationUpdated: 1591899462,
         whoUpdatedLast: ["paulasanchez10", "innocence project"],
     },
     {
@@ -50,7 +52,8 @@ const caseInformation = [
             "Representavive: https://www.house.gov/representatives/find-your-representative",
         ],
         whereIsThisTakingPlace: ["United States"],
-        LastDateInformationUpdated: 1591899362,
+        createdOn: 1591899562,
+        LastDateInformationUpdated: 1591899562,
         whoUpdatedLast: ["joe_ward_12", "American Heart Association"],
     },
     {
@@ -68,7 +71,8 @@ const caseInformation = [
             "Representative: https://www.house.gov/representatives/find-your-representative",
         ],
         whereIsThisTakingPlace: ["Yemen"],
-        LastDateInformationUpdated: 1591899362,
+        createdOn: 1591899562,
+        LastDateInformationUpdated: 1591899562,
         whoUpdatedLast: ["carl.kevia.hernandez", "Amnesty International"],
     },
 ];
